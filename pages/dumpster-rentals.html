@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dumpster Rentals | Limitless Moving</title>
+  <meta name="description" content="This page is being relocated. Please check back soon or request a free quote." />
+  <meta name="keywords" content="dumpster rentals, moving services, under construction, Limitless Moving" />
+  <meta property="og:title" content="Dumpster Rentals | Under Construction" />
+  <meta property="og:description" content="We're upgrading this section. Come back soon!" />
+  <meta property="og:image" content="https://yourdomain.com/images/og-image.jpg" />
+  <meta property="og:url" content="https://yourdomain.com/pages/dumpster-rentals.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dumpster Rentals | Limitless Moving" />
+  <meta name="twitter:description" content="This section is being updated to better serve you." />
+  <meta name="twitter:image" content="https://yourdomain.com/images/og-image.jpg" />
+  <link rel="canonical" href="https://yourdomain.com/pages/dumpster-rentals.html" />
+  <link rel="icon" type="image/png" href="../images/moving-truck-favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: url('/images/futuristic-cityscape.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      backdrop-filter: blur(5px);
+      position: relative;
+    }
+    .construction-container {
+      background-color: rgba(0, 0, 0, 0.65);
+      padding: 3rem;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      max-width: 600px;
+      margin: 2rem;
+    }
+    .construction-logo {
+      max-width: 180px;
+      margin-bottom: 1rem;
+    }
+    .construction-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    .construction-subtitle {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+    .construction-buttons .btn {
+      margin: 0 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <script>
+    fetch('../navbar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar').innerHTML = html;
+      })
+      .catch(error => console.error('Navbar load error:', error));
+  </script>
+
+  <div class="construction-container">
+    <img src="../images/logo.png" alt="Limitless Moving Logo" class="construction-logo" />
+    <h1 class="construction-title">This Page is Being Relocated</h1>
+    <p class="construction-subtitle">We’re moving things around to serve you even better.</p>
+    <div class="construction-buttons">
+      <a href="/index.html" class="btn btn-secondary">Back to Home</a>
+      <a href="/index.html#client-login" class="btn btn-primary">Get a Free Quote</a>
+    </div>
+  </div>
+
+<div id="footer"></div>
+<script>
+  fetch('../footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer').innerHTML = html;
+    })
+    .catch(error => console.error('Footer load error:', error));
+</script>
+
+</body>
+</html>
