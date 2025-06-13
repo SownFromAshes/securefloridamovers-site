@@ -2,17 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- ADD THIS MOBILE DETECTION CODE RIGHT HERE -->
+    <script>
+    (function() {
+        'use strict';
+        
+        function isMobilePhone() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+            // Check if it's a tablet first (we want tablets to see desktop)
+            const tabletPatterns = [
+                /iPad/i,
+                /Android(?!.*Mobile)/i,
+                /Tablet/i,
+                /Kindle/i,
+                /Silk/i,
+                /PlayBook/i
+            ];
+            
+            for (let pattern of tabletPatterns) {
+                if (pattern.test(userAgent)) {
+                    return false; // It's a tablet, show desktop
+                }
+            }
+            
+            // Check if it's a mobile phone
+            const mobilePatterns = [
+                /Mobile.*Safari/i,
+                /Android.*Mobile/i,
+                /BlackBerry/i,
+                /webOS/i,
+                /Opera Mini/i,
+                /IEMobile/i,
+                /Mobile.*Firefox/i,
+                /Mobile.*Chrome/i
+            ];
+            
+            for (let pattern of mobilePatterns) {
+                if (pattern.test(userAgent)) {
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+        
+        function shouldRedirectToMobile() {
+            // Don't redirect if:
+            // 1. Already on mobile page
+            // 2. Desktop override parameter is present
+            // 3. Not a mobile phone
+            
+            const currentPage = window.location.pathname;
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            if (currentPage.includes('mobile-index.html')) {
+                return false;
+            }
+            
+            if (urlParams.get('desktop') === '1') {
+                return false;
+            }
+            
+            return isMobilePhone();
+        }
+        
+        // Perform redirect if needed
+        if (shouldRedirectToMobile()) {
+            window.location.href = '/mobile-index.html';
+        }
+    })();
+    </script>
+    <!-- END MOBILE DETECTION CODE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure Florida Movers | Tampa’s Top-Rated Moving Company | Free Quotes</title>
     <meta name="description" content="Secure Florida Movers is Tampa Bay’s most trusted, licensed, and insured moving company. Local, long-distance, and commercial moves. Get your free quote today!">
     <meta name="keywords" content="Tampa movers, Florida moving company, best movers Tampa, long distance movers, commercial movers, licensed movers, moving quotes Tampa, Palm Harbor movers">
-    <link rel="canonical" href="https://yourdomain.com/">
+    <link rel="canonical" href="https://securefloridamovers.com/">
     <link rel="icon" type="image/png" href="images/moving-truck-favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" as="image" href="images/secure-florida-moving-mobile.webp">
+    <link rel="preload" as="image" href="images/secure-florida-moving.webp">
     <link rel="stylesheet" href="css/styles.css">
     <!-- LocalBusiness & Review Schema -->
     <script type="application/ld+json">
@@ -20,7 +92,7 @@
       "@context": "https://schema.org",
       "@type": "MovingCompany",
       "name": "Secure Florida Movers",
-      "image": "https://yourdomain.com/images/logo.png",
+      "image": "https://securefloridamovers.com/images/logo.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "123 Main St",
@@ -30,7 +102,7 @@
         "addressCountry": "US"
       },
       "telephone": "(727) 459-3467",
-      "url": "https://yourdomain.com",
+      "url": "https://securefloridamovers.com",
       "areaServed": ["Tampa", "Palm Harbor", "Florida"],
       "priceRange": "$$",
       "openingHours": "Mo-Su 07:00-19:00",
@@ -122,22 +194,6 @@
                     <i class="fas fa-lightbulb tip-icon"></i>
                     <div class="tip-content">
                         <strong>Moving Tip:</strong> Book your move 2-4 weeks in advance for the best rates and availability, especially during peak season (summer months)!
-                    </div>
-                </div>
-            </div>
-            <div class="hero-quote">
-                <div class="hero-cta-box">
-                    <div class="cta-group">
-                        <a href="#client-login" class="button primary-cta">Get Your Free Moving Quote</a>
-                        <div class="supporting-cta">
-                            <p class="small-text">Prefer to speak with someone?</p>
-                            <a href="tel:7274593467" class="button secondary-cta">Call (727) 459-FIRM</a>
-                        </div>
-                        <ul class="trust-signals">
-                            <li><i class="fas fa-check-circle"></i> Free In-Home Estimates</li>
-                            <li><i class="fas fa-check-circle"></i> Transparent Pricing</li>
-                            <li><i class="fas fa-check-circle"></i> Professional Team</li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -469,24 +525,25 @@
             <div class="login-container">
                 <div class="login-card">
                     <h3><i class="fas fa-calendar-alt"></i> Request Free Estimate</h3>
-                    <form id="booking-form" class="enhanced-form">
-                        <div class="input-group enhanced-input">
-                            <label for="customer-name">Your Name:</label>
-                            <input type="text" id="customer-name" placeholder="Enter your full name" required>
-                        </div>
-                        <div class="input-group enhanced-input">
-                            <label for="phone">Phone Number:</label>
-                            <input type="tel" id="phone" placeholder="(727) 555-0123" required>
-                        </div>
-                        <div class="input-group enhanced-input">
-                            <label for="move-date">Preferred Move Date:</label>
-                            <input type="date" id="move-date" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary enhanced-btn">
-                            <span class="btn-text">Get Free Quote</span>
-                            <i class="fas fa-spinner btn-loading"></i>
-                        </button>
-                    </form>
+                    <form id="booking-form" class="enhanced-form" action="https://formspree.io/f/manjodoo" method="POST">
+    <input type="text" name="_gotcha" style="display:none">
+    <div class="input-group enhanced-input">
+        <label for="customer-name">Your Name:</label>
+        <input type="text" id="customer-name" name="customer-name" placeholder="Enter your full name" required>
+    </div>
+    <div class="input-group enhanced-input">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="(727) 555-0123" required>
+    </div>
+    <div class="input-group enhanced-input">
+        <label for="move-date">Preferred Move Date:</label>
+        <input type="date" id="move-date" name="move-date" required>
+    </div>
+    <button type="submit" class="btn btn-primary enhanced-btn">
+        <span class="btn-text">Get Free Quote</span>
+        <i class="fas fa-spinner btn-loading"></i>
+    </button>
+</form>
                 </div>
                 <div class="client-benefits">
                     <h3>Why Choose Secure Florida Movers?</h3>
@@ -519,7 +576,7 @@
                         <div class="contact-bubble-icon"><i class="fas fa-envelope"></i></div>
                         <div>
                             <h4>Email Us</h4>
-                            <a href="mailto:limitlessventures85@gmail.com">Secure Florida Movers</a>
+                            <a href="mailto:securefloridamovers@gmail.com">Secure Florida Movers</a>
                         </div>
                     </div>
                     <div class="contact-item contact-bubble">
