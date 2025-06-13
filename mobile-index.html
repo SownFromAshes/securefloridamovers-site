@@ -6,6 +6,9 @@
     <title>Secure Florida Movers | Tampa's Trusted Moving Company | Free Quote</title>
     <meta name="description" content="Tampa Bay's most trusted moving company. Licensed & insured Florida movers. Get your free quote in seconds!">
     <link rel="icon" type="image/png" href="images/moving-truck-favicon.png">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
     <style>
         * {
             margin: 0;
@@ -21,6 +24,7 @@
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            font-display: swap;
         }
 
         /* Header */
@@ -94,6 +98,8 @@
             margin-bottom: 1rem;
             color: #e0e7ff;
             line-height: 1.2;
+            contain: layout style paint;
+            will-change: auto;
         }
 
         .hero-title .highlight {
@@ -113,6 +119,7 @@
             flex-direction: column;
             gap: 0.75rem;
             margin-bottom: 2rem;
+            align-items: center;
         }
 
         .trust-point {
@@ -279,6 +286,7 @@
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
+            align-items: center;
         }
 
         .benefit-item {
@@ -358,8 +366,19 @@
             to { transform: rotate(360deg); }
         }
 
-        /* FontAwesome Icons */
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+        /* FontAwesome Icons - Optimized Loading */
+        /* Removed @import to prevent render blocking */
+        
+        /* Critical path optimization */
+        .hero-title {
+            font-synthesis: none;
+            text-rendering: optimizeSpeed;
+        }
+        
+        /* Preload critical content */
+        .hero, .hero-title, .logo {
+            contain: layout;
+        }
     </style>
 </head>
 <body>
@@ -411,7 +430,7 @@
                 Get Your Free Moving Quote
             </h2>
             
-            <form id="moving-form" action="https://formspree.io/f/manjodoo" method="POST">
+            <form id="moving-form" action="https://formspree.io/f/mpwrddpe" method="POST">
                 <input type="hidden" name="_gotcha" style="display:none">
                 <input type="hidden" name="_subject" value="Mobile Quote Request - Secure Florida Movers">
                 <input type="hidden" name="_next" value="https://securefloridamovers.com/mobile-thank-you.html">
@@ -428,7 +447,7 @@
 
                 <div class="form-group">
                     <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="(727) 459-FIRM">
+                    <input type="tel" id="phone" name="phone" required placeholder="(727) 555-0123">
                 </div>
 
                 <div class="form-group">
