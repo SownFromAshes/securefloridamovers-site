@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moving Blog | Secure Florida Movers</title>
+  <meta name="description" content="Moving advice and expert insights from Florida’s top moving pros. Read our latest articles and tips to make your move seamless." />
+  <meta name="keywords" content="moving blog, moving tips, relocation advice, expert movers, Florida moving company blog" />
+  <meta property="og:title" content="Secure Florida Movers Blog" />
+  <meta property="og:description" content="Expert moving insights and guides from the pros who move Florida. Explore tips, checklists, and moving secrets." />
+  <meta property="og:image" content="https://yourdomain.com/images/og-image.jpg" />
+  <meta property="og:url" content="https://yourdomain.com/pages/blog.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Secure Florida Movers Blog" />
+  <meta name="twitter:description" content="Insider tips and trusted advice from Florida’s leading movers." />
+  <meta name="twitter:image" content="https://yourdomain.com/images/og-image.jpg" />
+  <link rel="canonical" href="https://yourdomain.com/pages/blog.html" />
+  <link rel="icon" type="image/png" href="../images/moving-truck-favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      color: #fff;
+      background: url('/images/futuristic-cityscape.jpg') no-repeat center center/cover;
+      backdrop-filter: blur(5px);
+    }
+    .blog-container {
+      padding: 4rem 2rem;
+      max-width: 1300px;
+      margin: auto;
+      text-align: center;
+    }
+    .blog-container h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+    }
+    .blog-container p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0.5rem auto 3rem auto;
+      color: #ccc;
+    }
+    .blog-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .blog-card {
+      background-color: rgba(0, 0, 0, 0.75);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: left;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .blog-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .blog-card h2 {
+      font-size: 1.4rem;
+      margin: 0.5rem 0;
+    }
+    .blog-card p {
+      font-size: 0.95rem;
+      color: #aaa;
+    }
+    .blog-card a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #00c3ff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .blog-cta {
+      margin-top: 4rem;
+    }
+    .blog-cta a {
+      background: #00c3ff;
+      color: black;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <script>
+    fetch('../navbar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar').innerHTML = html;
+      })
+      .catch(error => console.error('Navbar load error:', error));
+  </script>
+
+  <section class="blog-container">
+    <h1>Expert Moving Insights from the Pros Who Move Florida</h1>
+    <p>Guides, tips, and secrets from the elite moving teams at Secure Florida Movers.</p>
+    <div class="blog-grid">
+      <article class="blog-card" itemscope itemtype="https://schema.org/Article">
+        <img src="../images/logo.png" alt="Blog Post Image">
+        <h2 itemprop="headline">How to Move Like a Millionaire: VIP Relocation Secrets</h2>
+        <p itemprop="description">Discover how high-net-worth clients plan relocations with white-glove services and zero friction.</p>
+        <a href="#">Read More →</a>
+      </article>
+      <article class="blog-card" itemscope itemtype="https://schema.org/Article">
+        <img src="../images/logo.png" alt="Blog Post Image">
+        <h2 itemprop="headline">The Ultimate Florida Moving Checklist [Free Download]</h2>
+        <p itemprop="description">Everything you need to prep, pack, and perfect your move — organized by pros.</p>
+        <a href="#">Read More →</a>
+      </article>
+      <article class="blog-card" itemscope itemtype="https://schema.org/Article">
+        <img src="../images/logo.png" alt="Blog Post Image">
+        <h2 itemprop="headline">What Most Movers Won’t Tell You (But We Will)</h2>
+        <p itemprop="description">Cut through the fluff and see what truly separates top movers from amateurs.</p>
+        <a href="#">Read More →</a>
+      </article>
+    </div>
+
+    <div class="blog-cta">
+      <a href="/index.html#client-login">Ready to Move?</a>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+  <script>
+    fetch('../footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('footer').innerHTML = html;
+      })
+      .catch(error => console.error('Footer load error:', error));
+  </script>
+</body>
+</html>

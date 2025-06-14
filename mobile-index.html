@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Secure Florida Movers | Tampa's Trusted Moving Company | Free Quote</title>
+    <meta name="description" content="Tampa Bay's most trusted moving company. Licensed & insured Florida movers. Get your free quote in seconds!">
+    <link rel="icon" type="image/png" href="images/moving-truck-favicon.png">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #e0e7ff;
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1f3a 100%);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-display: swap;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: #00ff99;
+            font-weight: 700;
+            font-size: 1.4rem;
+            text-shadow: 0 0 10px rgba(0, 255, 153, 0.6);
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Main Container */
+        .container {
+            padding: 1.5rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 255, 153, 0.9);
+            color: #0a0e1a;
+            padding: 0.75rem 1.25rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            animation: glow 2s infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(0, 255, 153, 0.4); }
+            50% { box-shadow: 0 0 20px rgba(0, 255, 153, 0.8); }
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #e0e7ff;
+            line-height: 1.2;
+            contain: layout style paint;
+            will-change: auto;
+        }
+
+        .hero-title .highlight {
+            color: #00ff99;
+            text-shadow: 0 0 15px rgba(0, 255, 153, 0.8);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: #a3bffa;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .trust-points {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+
+        .trust-point {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            color: #d1d5db;
+            font-weight: 500;
+        }
+
+        .trust-point i {
+            color: #00ff99;
+            font-size: 1.1rem;
+        }
+
+        /* Quote Form */
+        .quote-form {
+            background: rgba(20, 28, 50, 0.8);
+            border: 2px solid rgba(0, 255, 153, 0.2);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #00ff99;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #a3bffa;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(0, 255, 153, 0.2);
+            border-radius: 12px;
+            background: rgba(10, 14, 26, 0.7);
+            color: #e0e7ff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #00ff99;
+            box-shadow: 0 0 0 3px rgba(0, 255, 153, 0.2);
+            background: rgba(10, 14, 26, 0.9);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, #00ff99, #00ccff);
+            color: #0a0e1a;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 255, 153, 0.4);
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #00ccff, #0066ff);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 255, 153, 0.6);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Call Button */
+        .call-section {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .call-text {
+            color: #a3bffa;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .call-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: rgba(10, 14, 26, 0.7);
+            color: #00ff99;
+            text-decoration: none;
+            border-radius: 12px;
+            border: 2px solid rgba(0, 255, 153, 0.3);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .call-btn:hover {
+            background: rgba(0, 255, 153, 0.1);
+            border-color: #00ff99;
+            transform: translateY(-2px);
+        }
+
+        .call-btn i {
+            font-size: 1.2rem;
+            animation: ring 3s infinite;
+        }
+
+        @keyframes ring {
+            0%, 100% { transform: rotate(0deg); }
+            10%, 30% { transform: rotate(-10deg); }
+            20% { transform: rotate(10deg); }
+        }
+
+        /* Benefits */
+        .benefits {
+            background: rgba(0, 204, 255, 0.1);
+            border: 2px solid rgba(0, 204, 255, 0.3);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .benefits-title {
+            color: #00ccff;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .benefit-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #d1d5db;
+            font-size: 0.95rem;
+        }
+
+        .benefit-item i {
+            color: #00ccff;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: #667;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(0, 255, 153, 0.1);
+            margin-top: 2rem;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: rgba(0, 255, 153, 0.1);
+            border: 2px solid rgba(0, 255, 153, 0.3);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .success-message h3 {
+            color: #00ff99;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .success-message p {
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+
+        /* Loading State */
+        .submit-btn.loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .submit-btn.loading::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top: 2px solid #0a0e1a;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* FontAwesome Icons - Optimized Loading */
+        /* Removed @import to prevent render blocking */
+        
+        /* Critical path optimization */
+        .hero-title {
+            font-synthesis: none;
+            text-rendering: optimizeSpeed;
+        }
+        
+        /* Preload critical content */
+        .hero, .hero-title, .logo {
+            contain: layout;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-truck"></i>
+            <span>Secure Florida Movers</span>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-badge">
+                <i class="fas fa-award"></i>
+                Tampa Bay's Trusted Movers Since 2020
+            </div>
+            
+            <h1 class="hero-title">
+                Professional Moving Services You Can <span class="highlight">Trust</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Licensed & Insured Florida Moving Company
+            </p>
+
+            <div class="trust-points">
+                <div class="trust-point">
+                    <i class="fas fa-check-circle"></i>
+                    Licensed & Insured Florida Movers
+                </div>
+                <div class="trust-point">
+                    <i class="fas fa-check-circle"></i>
+                    Free In-Home Estimates
+                </div>
+                <div class="trust-point">
+                    <i class="fas fa-check-circle"></i>
+                    No Hidden Fees Policy
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Form -->
+        <section class="quote-form" id="quote-form">
+            <h2 class="form-title">
+                <i class="fas fa-calculator"></i>
+                Get Your Free Moving Quote
+            </h2>
+            
+            <form id="moving-form" action="https://formspree.io/f/manjodoo" method="POST">
+                <input type="hidden" name="_gotcha" style="display:none">
+                <input type="hidden" name="_subject" value="Mobile Quote Request - Secure Florida Movers">
+                <input type="hidden" name="_next" value="https://securefloridamovers.com/mobile-thank-you.html">
+                <input type="hidden" name="_redirect" value="https://securefloridamovers.com/mobile-thank-you.html">
+                <input type="hidden" name="_url" value="https://securefloridamovers.com/mobile-thank-you.html">
+                
+                <div class="form-group">
+                    <label for="full-name">Full Name *</label>
+                    <input type="text" id="full-name" name="full-name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="(727) 555-0123">
+                </div>
+
+                <div class="form-group">
+                    <label for="move-date">Preferred Move Date</label>
+                    <input type="date" id="move-date" name="move-date">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="origin-zip">From Zip Code</label>
+                        <input type="text" id="origin-zip" name="origin-zip" placeholder="33701" maxlength="5">
+                    </div>
+                    <div class="form-group">
+                        <label for="destination-zip">To Zip Code</label>
+                        <input type="text" id="destination-zip" name="destination-zip" placeholder="33705" maxlength="5">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Moving Details</label>
+                    <textarea id="message" name="message" rows="3" placeholder="Tell us about your move (home size, special items, etc.)"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submit-btn">
+                    Get My Free Quote Now
+                </button>
+            </form>
+        </section>
+
+        <!-- Success Message -->
+        <div class="success-message" id="success-message">
+            <h3><i class="fas fa-check-circle"></i> Thank You!</h3>
+            <p>Your quote request has been submitted successfully. Our team will contact you within 30 minutes during business hours (7 AM - 7 PM) to provide your personalized moving estimate.</p>
+        </div>
+
+        <!-- Call Section -->
+        <section class="call-section">
+            <p class="call-text">Need to speak with someone right now?</p>
+            <a href="tel:7274593467" class="call-btn">
+                <i class="fas fa-phone"></i>
+                Call (727) 459-FIRM
+            </a>
+        </section>
+
+        <!-- Benefits -->
+        <section class="benefits">
+            <h3 class="benefits-title">Why Choose Secure Florida Movers?</h3>
+            <div class="benefit-list">
+                <div class="benefit-item">
+                    <i class="fas fa-shield-alt"></i>
+                    Fully Licensed & Insured
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-users"></i>
+                    Professional Moving Team
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-truck"></i>
+                    Modern Equipment & Vehicles
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-dollar-sign"></i>
+                    Transparent, Fair Pricing
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>
+            <p>&copy; Secure Florida Movers, LLC. All rights reserved.</p>
+            <p>Licensed & Insured | Serving Tampa Bay & Beyond</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.getElementById('moving-form').addEventListener('submit', function(e) {
+            const submitBtn = document.getElementById('submit-btn');
+            const successMessage = document.getElementById('success-message');
+            const form = document.getElementById('quote-form');
+            
+            // Add loading state
+            submitBtn.classList.add('loading');
+            submitBtn.textContent = 'Sending Request...';
+            
+            // Show success message after a delay (simulate form processing)
+            setTimeout(() => {
+                form.style.display = 'none';
+                successMessage.classList.add('show');
+                
+                // Track the conversion (you can add Google Analytics or other tracking here)
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL',
+                        'value': 1.0,
+                        'currency': 'USD'
+                    });
+                }
+            }, 1000);
+        });
+
+        // Auto-format phone number
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 6) {
+                value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+            } else if (value.length >= 3) {
+                value = value.replace(/(\d{3})(\d{0,3})/, '($1) $2');
+            }
+            e.target.value = value;
+        });
+
+        // Auto-format zip codes
+        function formatZip(input) {
+            input.addEventListener('input', function(e) {
+                e.target.value = e.target.value.replace(/\D/g, '').substring(0, 5);
+            });
+        }
+        
+        formatZip(document.getElementById('origin-zip'));
+        formatZip(document.getElementById('destination-zip'));
+
+        // Set minimum date to today
+        document.getElementById('move-date').min = new Date().toISOString().split('T')[0];
+
+        // Add smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
