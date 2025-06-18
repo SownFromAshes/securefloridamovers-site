@@ -1,0 +1,1808 @@
+/* ============================================ */
+/* 1. UNIVERSAL STYLES & RESETS               */
+/* ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #e0e7ff;
+    background-color: #0a0e1a;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.main-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+    .main-section {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: #e0e7ff;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #a3bffa;
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+.highlight {
+    color: #00ff99;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #00ff99, #00ccff);
+    color: #0a0e1a;
+}
+
+.btn-sm {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* This is the new rule for the visual dividers */
+.section-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 153, 0.2), transparent);
+    border: none;
+    margin: 0;
+}
+
+
+/* ============================================ */
+/* 2. HEADER & NAVIGATION BAR                 */
+/* ============================================ */
+.header { position: fixed; top: 0; left: 0; width: 100%; z-index: 100; background: rgba(10, 14, 26, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0, 255, 153, 0.15); }
+.nav { display: flex; justify-content: space-between; align-items: center; height: 5rem; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+.nav-brand { display: flex; align-items: center; gap: 0.5rem; color: #00ff99; font-weight: 700; font-size: 1.1rem; text-decoration: none; }
+.nav-brand:hover { color: #00ccff; }
+.nav-brand i { font-size: 1.5rem; }
+.nav-menu { position: fixed; top: 5rem; left: -100%; width: 100%; height: calc(100vh - 5rem); background-color: #0a0e1a; padding: 2rem; transition: left 0.4s ease; }
+.nav-menu.show-menu { left: 0; }
+.nav-list { list-style: none; display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+.nav-link { color: #e0e7ff; font-weight: 600; text-decoration: none; font-size: 1.2rem; }
+.nav-link:hover { color: #00ff99; }
+.nav-actions { display: flex; align-items: center; gap: 1rem; }
+.nav-toggle { font-size: 1.5rem; color: #e0e7ff; background: none; border: none; cursor: pointer; }
+.nav-quote-btn { display: none; }
+.dropdown { position: relative; }
+.dropdown-toggle { cursor: pointer; }
+.dropdown-toggle i { font-size: 0.8rem; transition: transform 0.3s ease; }
+.dropdown.open .dropdown-toggle i { transform: rotate(180deg); }
+.dropdown-menu { display: none; list-style: none; margin-top: 1rem; background-color: rgba(20, 28, 50, 0.9); border-radius: 8px; text-align: center; }
+.dropdown.open .dropdown-menu { display: block; }
+.dropdown-item { display: block; padding: 1rem; color: #a3bffa; text-decoration: none; }
+.dropdown-item i { margin-right: 0.5rem; color: #00ff99; }
+
+@media (min-width: 992px) {
+    .nav-toggle { display: none; }
+    .nav-quote-btn { display: inline-flex; }
+    .nav-menu { position: static; width: auto; height: auto; background: none; padding: 0; }
+    .nav-list { flex-direction: row; gap: 2.5rem; }
+    .nav-link { font-size: 1rem; }
+    .dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); padding: 0.5rem 0; margin-top: 1.5rem; min-width: 220px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); border: 1px solid rgba(0,255,153,0.2); }
+}
+
+
+/* ============================================ */
+/* 3. HOMEPAGE-SPECIFIC STYLES                */
+/* ============================================ */
+/* --- Hero Section --- */
+.hero { position: relative; padding: 8rem 0; text-align: center; background: url('../images/secure-florida-moving.webp') no-repeat center center/cover; }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(10, 14, 26, 0.8), rgba(10, 14, 26, 0.95)); z-index: 1; }
+.hero-content { position: relative; z-index: 2; }
+.hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(0, 255, 153, 0.9); color: #0a0e1a; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; }
+.hero-title { font-size: 2.5rem; font-weight: 900; line-height: 1.2; color: #e0e7ff; margin: 0 0 1rem 0; }
+.hero-subtitle { font-size: 1.1rem; font-weight: 500; color: #a3bffa; margin: 0 0 1.5rem 0; }
+.hero-description { font-size: 1rem; color: #d1d5db; margin: 0 0 2rem 0; }
+.hero-buttons { display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+@media (min-width: 768px) { .hero-title { font-size: 3.5rem; } .hero-subtitle { font-size: 1.375rem; } .hero-buttons { flex-direction: row; justify-content: center; gap: 1.5rem; } .btn { width: auto; } }
+
+/* --- Services Section --- */
+.services-section { background: #0a0e1a; }
+.services-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; }
+.service-card { background: rgba(20, 28, 50, 0.7); border-radius: 24px; padding: 2rem; text-align: center; border: 1px solid rgba(0, 255, 153, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden; }
+.service-card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0, 255, 153, 0.15); border-color: #00ff99; }
+.service-card.featured { border-color: #00ccff; background: linear-gradient(135deg, rgba(0, 204, 255, 0.1), rgba(10, 14, 26, 0.7)); }
+.featured-badge { position: absolute; top: 1rem; right: 1rem; background: linear-gradient(135deg, #00ccff, #0066ff); color: #e0e7ff; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+.service-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #00ff99, #00ccff); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 0 15px rgba(0, 255, 153, 0.3); }
+.service-icon i { font-size: 1.75rem; color: #0a0e1a; }
+.service-card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; color: #e0e7ff; }
+.service-card p { color: #a3bffa; margin-bottom: 1.5rem; line-height: 1.6; }
+.service-price { font-size: 1.25rem; font-weight: 800; color: #00ff99; margin-bottom: 1.5rem; }
+@media (min-width: 768px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* --- Calculator Section --- */
+/* Corrected background path */
+.calculator-section { background: linear-gradient(135deg, rgba(10,14,26,0.75) 0%, rgba(26,31,58,0.85) 100%), url('../images/moving-cost-calculator.webp') no-repeat center/cover; background-attachment: fixed; }
+.calculator-card { background: rgba(20, 28, 50, 0.8); border: 1px solid rgba(0, 255, 153, 0.15); border-radius: 24px; padding: 2rem; max-width: 800px; margin: 0 auto; backdrop-filter: blur(10px); }
+.calculator-card h3 { text-align: center; font-size: 1.5rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem; }
+.calculator-card h3 i { color: #00ff99; }
+.calc-inputs { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+.input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.input-group label { font-weight: 600; color: #a3bffa; }
+.input-group select, .input-group input, .input-group textarea { padding: 1rem; border: 1px solid #4a5568; border-radius: 8px; font-size: 1rem; background: #fff; color: #1a202c; }
+.input-group input:focus, .input-group select:focus, .input-group textarea:focus { outline: none; border-color: #00ff99; box-shadow: 0 0 0 3px rgba(0, 255, 153, 0.2); }
+.calc-btn { display: block; margin: 0 auto; width: 100%; max-width: 300px; }
+.results-container { margin-top: 2rem; background: rgba(10, 14, 26, 0.5); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(0, 255, 153, 0.1); }
+.result-item { text-align: center; }
+.result-item:first-child { margin-bottom: 1rem; }
+.result-item h4 { font-size: 1rem; color: #a3bffa; font-weight: 500; margin-bottom: 0.25rem; }
+.result-item p { font-size: 1.75rem; font-weight: 700; color: #00ff99; margin: 0; }
+.calculator-info { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(0, 255, 153, 0.15); }
+.calculator-info h4 { text-align: center; margin-bottom: 1.5rem; color: #a3bffa; }
+.calculator-disclaimer-item { background: rgba(10, 14, 26, 0.5); border-radius: 12px; margin-bottom: 0.5rem; border: 1px solid rgba(0, 255, 153, 0.1); }
+.calculator-disclaimer-question { display: block; width: 100%; padding: 1rem; background: transparent; border: none; color: #e0e7ff; font-weight: 600; text-align: left; cursor: pointer; list-style: none; }
+.calculator-disclaimer-question::-webkit-details-marker { display: none; }
+.calculator-disclaimer-answer { padding: 0 1rem 1rem 1rem; color: #a3bffa; line-height: 1.6; }
+@media (min-width: 768px) { .calculator-card { padding: 3rem; } .calc-inputs { grid-template-columns: 1fr 1fr; } .calculator-card h3 { font-size: 1.75rem; } }
+
+/* --- Expert Advice Section --- */
+.expert-advice-section { background: linear-gradient(135deg, #1a1f3a 0%, #0a0e1a 100%); }
+.blog-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin: 3rem 0; }
+.blog-card { background: rgba(20, 28, 50, 0.7); border-radius: 20px; overflow: hidden; border: 1px solid rgba(0, 255, 153, 0.1); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; display: flex; flex-direction: column; }
+.blog-card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0, 255, 153, 0.15); border-color: #00ff99; }
+.blog-image { width: 100%; height: 200px; object-fit: cover; }
+.blog-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+.blog-content h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: #e0e7ff; line-height: 1.4; }
+.blog-content p { color: #a3bffa; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1; }
+.read-more-link { color: #00ff99; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.2s ease; }
+.read-more-link:hover { color: #00ccff; text-decoration: underline; gap: 0.75rem; }
+.blog-cta { text-align: center; }
+@media (min-width: 768px) { .blog-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; } }
+@media (min-width: 1024px) { .blog-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* --- Homepage Quote Form Section --- */
+.hp-quote-form-section { background: linear-gradient(135deg, rgba(10,14,26,0.85) 0%, rgba(26,31,58,0.95) 100%), url('../images/moving-quote.webp') no-repeat center center/cover; background-attachment: fixed; }
+.hp-quote-form-container { display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin: 3rem auto 0; max-width: 1100px; }
+.hp-quote-form-card { background: rgba(20, 28, 50, 0.85); padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(0, 255, 153, 0.2); backdrop-filter: blur(12px); box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+.hp-quote-form-card h3 { font-size: 1.75rem; text-align: left; margin-bottom: 2.5rem; color: #e0e7ff; }
+.hp-booking-form { display: flex; flex-direction: column; gap: 1.5rem; }
+.hp-form-benefits { background: rgba(0, 204, 255, 0.1); padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(0, 204, 255, 0.25); backdrop-filter: blur(12px); display: flex; flex-direction: column; justify-content: center; }
+.hp-form-benefits h3 { font-size: 1.75rem; margin-bottom: 2rem; color: #e0e7ff; }
+.hp-form-benefits ul { list-style: none; padding: 0; }
+.hp-form-benefits li { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; color: #d1d5db; font-size: 1.1rem; }
+.hp-form-benefits li:last-child { margin-bottom: 0; }
+.hp-form-benefits i { color: #00ff99; font-size: 1.2rem; }
+@media (min-width: 992px) { .hp-quote-form-container { grid-template-columns: 1fr 1fr; align-items: center; } }
+
+/* --- Homepage Testimonials Section --- */
+.hp-testimonials-section { background: linear-gradient(135deg, rgba(10,14,26,0.85) 0%, rgba(26,31,58,0.95) 100%), url('../images/testimonials.webp') no-repeat center center/cover; background-attachment: fixed; }
+.hp-testimonials-container { max-width: 800px; margin: 3rem auto 0; position: relative; }
+.hp-testimonial-carousel { position: relative; overflow: hidden; border-radius: 24px; }
+.hp-testimonial-card { display: none; padding: 2.5rem 1.5rem; background: rgba(20, 28, 50, 0.8); border: 1px solid rgba(0, 255, 153, 0.15); text-align: center; backdrop-filter: blur(10px); animation: fadeIn 0.6s ease-in-out; }
+.hp-testimonial-card.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.hp-testimonial-header { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+.hp-testimonial-photo { width: 70px; height: 70px; border-radius: 50%; border: 3px solid #00ff99; object-fit: cover; }
+.hp-testimonial-name { display: block; font-weight: 700; color: #e0e7ff; }
+.hp-testimonial-location { color: #a3bffa; font-size: 0.9rem; }
+.hp-testimonial-stars { display: flex; justify-content: center; align-items: center; gap: 0.25rem; margin-bottom: 1.5rem; color: #00ff99; }
+.hp-verified-badge { color: #a3bffa; font-size: 0.8rem; font-weight: 500; margin-left: 0.75rem; display: inline-flex; align-items: center; gap: 0.25rem; opacity: 0.8; }
+.hp-testimonial-quote { font-size: 1.1rem; line-height: 1.7; color: #d1d5db; font-style: italic; margin: 0; }
+.hp-testimonial-nav { display: flex; justify-content: center; gap: 0.75rem; margin-top: 1.5rem; }
+.hp-testimonial-btn { width: 10px; height: 10px; border-radius: 50%; border: none; background: rgba(163, 191, 250, 0.4); cursor: pointer; transition: all 0.3s ease; padding: 0; }
+.hp-testimonial-btn:hover { background: #00ccff; }
+.hp-testimonial-btn.active { background: #00ff99; transform: scale(1.2); }
+@media (min-width: 768px) { .hp-testimonial-card { padding: 3rem; } .hp-testimonial-header { flex-direction: row; } .hp-testimonial-quote { font-size: 1.25rem; } }
+
+/* --- Homepage Why Choose Us Section --- */
+.hp-why-choose-us-section { background: linear-gradient(135deg, #0a0e1a 0%, #1a1f3a 100%); }
+.hp-why-choose-us-points { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 1000px; margin: 3rem auto 0; }
+.hp-point { display: flex; flex-direction: column; align-items: center; text-align: center; background: rgba(20, 28, 50, 0.7); padding: 2rem; border-radius: 24px; border: 1px solid rgba(0, 255, 153, 0.1); transition: all 0.3s ease; }
+.hp-point:hover { transform: translateY(-5px); border-color: #00ff99; }
+.hp-point-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #00ff99, #00ccff); border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-bottom: 1.5rem; }
+.hp-point-icon i { font-size: 1.75rem; color: #0a0e1a; }
+.hp-point-content h4 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: #e0e7ff; }
+.hp-point-content p { color: #a3bffa; line-height: 1.6; }
+@media (min-width: 768px) { .hp-why-choose-us-points { grid-template-columns: repeat(2, 1fr); gap: 2rem; } .hp-point { flex-direction: row; align-items: flex-start; text-align: left; } .hp-point-icon { margin-right: 1.5rem; margin-bottom: 0; } }
+
+/* --- Homepage Contact Section --- */
+.hp-contact-section { background-color: #0a0e1a; }
+.hp-contact-grid { margin-top: 3rem; display: grid; grid-template-columns: 1fr; gap: 2rem; }
+.hp-contact-info { display: flex; flex-direction: column; gap: 1.5rem; justify-content: center; }
+.hp-contact-item { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; background: rgba(20, 28, 50, 0.7); padding: 2rem; border-radius: 16px; border: 1px solid rgba(0, 255, 153, 0.15); transition: all 0.3s ease; }
+.hp-contact-item:hover { transform: scale(1.03); border-color: #00ff99; }
+.hp-contact-icon { flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #00ff99, #00ccff); border-radius: 16px; display: flex; align-items: center; justify-content: center; }
+.hp-contact-icon i { color: #0a0e1a; font-size: 1.75rem; }
+.hp-contact-details h4 { font-size: 1rem; color: #a3bffa; font-weight: 500; margin-bottom: 0.25rem; }
+.hp-contact-details p, .hp-contact-details a { font-size: 1.1rem; font-weight: 600; color: #e0e7ff; text-decoration: none; word-break: break-word; }
+.hp-contact-details a:hover { text-decoration: underline; color: #00ff99; }
+.hp-contact-map iframe { border-radius: 16px; height: 350px; }
+@media (min-width: 992px) { .hp-contact-grid { grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; } .hp-contact-item { flex-direction: row; text-align: left; height: 100%; } }
+
+/* ============================================ */
+/* 4. FOOTER                                  */
+/* ============================================ */
+.site-footer { background-color: #0a0e1a; border-top: 1px solid rgba(0, 255, 153, 0.15); padding: 2rem 0; text-align: center; }
+.footer-content { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+.footer-links a { color: #a3bffa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s ease; }
+.footer-links a:hover { color: #00ff99; text-decoration: underline; }
+.footer-copyright { color: #667; font-size: 0.85rem; }
+@media (min-width: 768px) { .footer-content { flex-direction: row; justify-content: space-between; } }
+
+/* ========================================================================== */
+/* 5. LOCAL MOVING PAGE-SPECIFIC STYLES                                     */
+/* ========================================================================== */
+
+/* --- Local Moving Why Us Section --- */
+.lm-why-us-points { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 1000px; margin: 3rem auto 0; }
+.lm-point { display: flex; flex-direction: column; align-items: center; text-align: center; background: rgba(20, 28, 50, 0.7); padding: 2rem; border-radius: 24px; border: 1px solid rgba(0, 255, 153, 0.1); transition: all 0.3s ease; }
+.lm-point:hover { transform: translateY(-5px); border-color: #00ff99; }
+.lm-point-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #00ff99, #00ccff); border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-bottom: 1.5rem; }
+.lm-point-icon i { font-size: 1.75rem; color: #0a0e1a; }
+.lm-point-content h4 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: #e0e7ff; }
+.lm-point-content p { color: #a3bffa; line-height: 1.6; }
+@media (min-width: 768px) { .lm-why-us-points { grid-template-columns: repeat(2, 1fr); gap: 2rem; } .lm-point { flex-direction: row; align-items: flex-start; text-align: left; } .lm-point-icon { margin-right: 1.5rem; margin-bottom: 0; } }
+
+/* --- Local Moving Quote Form Section --- */
+.lm-quote-form-section { background: linear-gradient(135deg, rgba(10,14,26,0.85) 0%, rgba(26,31,58,0.95) 100%), url('../images/moving-quote.webp') no-repeat center center/cover; background-attachment: fixed; }
+.lm-quote-form-container { display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin: 3rem auto 0; max-width: 1100px; }
+.lm-quote-form-card { background: rgba(20, 28, 50, 0.85); padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(0, 255, 153, 0.2); backdrop-filter: blur(12px); box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+.lm-quote-form-card h3 { font-size: 1.75rem; text-align: left; margin-bottom: 2.5rem; color: #e0e7ff; display: flex; align-items: center; gap: 0.75rem;}
+.lm-booking-form { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+.lm-form-benefits { background: rgba(0, 204, 255, 0.1); padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(0, 204, 255, 0.25); backdrop-filter: blur(12px); display: flex; flex-direction: column; justify-content: center; }
+.lm-form-benefits h3 { font-size: 1.75rem; margin-bottom: 2rem; color: #e0e7ff; }
+.lm-form-benefits ul { list-style: none; padding: 0; }
+.lm-form-benefits li { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; color: #d1d5db; font-size: 1.1rem; }
+.lm-form-benefits li:last-child { margin-bottom: 0; }
+.lm-form-benefits i { color: #00ff99; font-size: 1.2rem; }
+@media (min-width: 768px) { .lm-booking-form { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 992px) { .lm-quote-form-container { grid-template-columns: 1fr 1fr; align-items: center; } }
+
+
+/* --- Local Moving FAQ Section --- */
+.faq-section { background: linear-gradient(135deg, rgba(10,14,26,0.75) 0%, rgba(26,31,58,0.85) 100%), url('../images/moving-cost-calculator.webp') no-repeat center/cover; background-attachment: fixed; }
+.faq-card { background: rgba(20, 28, 50, 0.8); border: 1px solid rgba(0, 255, 153, 0.15); border-radius: 24px; padding: 2rem; max-width: 900px; margin: 0 auto; backdrop-filter: blur(10px); }
+.faq-item { background: rgba(10, 14, 26, 0.5); border-radius: 12px; margin-bottom: 0.5rem; border: 1px solid rgba(0, 255, 153, 0.1); }
+.faq-question { display: block; width: 100%; padding: 1rem; background: transparent; border: none; color: #e0e7ff; font-weight: 600; text-align: left; cursor: pointer; list-style: none; }
+.faq-question::-webkit-details-marker { display: none; }
+.faq-answer { padding: 0 1rem 1rem 1rem; color: #a3bffa; line-height: 1.6; }
+@media (min-width: 768px) { .faq-card { padding: 3rem; } }
+
+/* ========================================================================== */
+/* 6. ABOUT US PAGE-SPECIFIC STYLES                                         */
+/* ========================================================================== */
+
+/* --- About Us Story Section --- */
+.au-story-section { background: #0a0e1a; }
+.au-story-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; }
+.au-story-image img { width: 100%; height: auto; border-radius: 24px; box-shadow: 0 10px 40px rgba(0, 255, 153, 0.1); border: 2px solid rgba(0, 255, 153, 0.2); }
+.au-story-content .section-title { margin-bottom: 1.5rem; }
+.au-story-lead { font-size: 1.25rem; font-weight: 600; color: #a3bffa; margin-bottom: 1.5rem; line-height: 1.5; }
+.au-story-content p { color: #d1d5db; margin-bottom: 1rem; }
+@media (min-width: 992px) { .au-story-grid { grid-template-columns: 1fr 1.5fr; gap: 4rem; } }
+
+/* --- About Us Core Values Section --- */
+.au-values-section { background: linear-gradient(135deg, #1a1f3a 0%, #0a0e1a 100%); }
+.au-values-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 3rem; }
+.au-value-card { background: rgba(20, 28, 50, 0.7); border-radius: 24px; padding: 2.5rem 2rem; text-align: center; border: 1px solid rgba(0, 255, 153, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.au-value-card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0, 255, 153, 0.15); border-color: #00ff99; }
+.au-value-icon { width: 70px; height: 70px; background: linear-gradient(135deg, #00ff99, #00ccff); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 0 20px rgba(0, 255, 153, 0.3); }
+.au-value-icon i { font-size: 2rem; color: #0a0e1a; }
+.au-value-card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #e0e7ff; }
+.au-value-card p { color: #a3bffa; line-height: 1.6; }
+@media (min-width: 768px) { .au-values-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+
+/* --- About Us Team Section --- */
+.au-team-section { background-color: #0a0e1a; }
+.au-team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+.au-team-card { background: rgba(20, 28, 50, 0.7); border-radius: 20px; text-align: center; border: 1px solid rgba(0, 255, 153, 0.1); transition: all 0.3s ease; overflow: hidden; }
+.au-team-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 255, 153, 0.1); border-color: #00ccff; }
+.au-team-photo { width: 100%; height: 220px; object-fit: cover; object-position: center; }
+.au-team-info { padding: 1.5rem 1rem; }
+.au-team-info h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.25rem; color: #e0e7ff; }
+.au-team-info p { font-size: 0.9rem; color: #00ff99; }
+@media (min-width: 768px) { .au-team-grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; } }
+
+/* ========================================================================== */
+/* 7. CONTACT US PAGE-SPECIFIC STYLES                                       */
+/* ========================================================================== */
+
+/* --- Contact Us Methods Section --- */
+.cu-methods-section { background-color: #0a0e1a; }
+.cu-methods-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+.cu-method-card { background: rgba(20, 28, 50, 0.7); border-radius: 24px; padding: 2.5rem 2rem; text-align: center; border: 1px solid rgba(0, 255, 153, 0.1); display: flex; flex-direction: column; align-items: center; }
+.cu-method-icon { width: 70px; height: 70px; background: linear-gradient(135deg, #00ff99, #00ccff); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 0 20px rgba(0, 255, 153, 0.3); }
+.cu-method-icon i { font-size: 2rem; color: #0a0e1a; }
+.cu-method-card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #e0e7ff; }
+.cu-method-card p { color: #a3bffa; line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1; }
+.cu-method-link { font-size: 1.25rem; font-weight: 600; color: #00ff99; text-decoration: none; transition: color 0.3s ease; }
+.cu-method-link:hover { color: #00ccff; text-decoration: underline; }
+@media (min-width: 992px) { .cu-methods-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+
+/* --- Contact Us Form & Info Section --- */
+.cu-form-section { background: linear-gradient(135deg, #1a1f3a 0%, #0a0e1a 100%); }
+.cu-form-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; max-width: 1200px; margin: 0 auto; }
+.cu-form-card { background: rgba(20, 28, 50, 0.85); padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(0, 255, 153, 0.2); backdrop-filter: blur(12px); box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+.cu-form-title { font-size: 1.75rem; text-align: left; margin-bottom: 2.5rem; color: #e0e7ff; display: flex; align-items: center; gap: 0.75rem; }
+.cu-form { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+.cu-form .input-group.full-width { grid-column: 1 / -1; }
+.cu-form .btn.full-width { grid-column: 1 / -1; }
+
+.cu-info-card { background: rgba(20, 28, 50, 0.85); border-radius: 24px; border: 1px solid rgba(0, 255, 153, 0.2); backdrop-filter: blur(12px); box-shadow: 0 10px 40px rgba(0,0,0,0.3); overflow: hidden; display: flex; flex-direction: column; }
+.cu-info-map { height: 250px; }
+.cu-info-map iframe { width: 100%; height: 100%; display: block; }
+.cu-info-details { padding: 2rem; }
+.cu-info-details h4 { font-size: 1.25rem; color: #e0e7ff; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+.cu-info-details h4 i { color: #00ff99; }
+.cu-info-details ul { list-style: none; padding: 0; margin: 0 0 1.5rem 0; color: #a3bffa; }
+.cu-info-details li { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+.cu-info-details .cu-info-subheader { margin-top: 1.5rem; }
+.cu-info-details p { color: #a3bffa; line-height: 1.6; }
+
+@media (min-width: 768px) { .cu-form { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 992px) { .cu-form-grid { grid-template-columns: 3fr 2fr; } .cu-info-map { height: 300px; } }
+
+/* ========================================================================== */
+/* 8. WHY CHOOSE US PAGE-SPECIFIC STYLES                                    */
+/* ========================================================================== */
+
+/* --- WCU Difference Section --- */
+.wcu-difference-section {
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f3a 100%);
+}
+.wcu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+.wcu-card {
+    background: rgba(20, 28, 50, 0.7);
+    padding: 2.5rem;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 255, 153, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.wcu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 255, 153, 0.15);
+    border-color: #00ff99;
+}
+.wcu-card-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #00ff99, #00ccff);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-bottom: 1.5rem;
+}
+.wcu-card-icon i {
+    font-size: 1.75rem;
+    color: #0a0e1a;
+}
+.wcu-card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #e0e7ff;
+}
+.wcu-card-text {
+    color: #a3bffa;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+@media (min-width: 768px) {
+    .wcu-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
+
+/* --- WCU Pledge Section --- */
+.wcu-pledge-section {
+    background: #0a0e1a;
+}
+.wcu-pledge-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 2rem;
+    background: rgba(20, 28, 50, 0.7);
+    border-radius: 24px;
+    border: 1px solid rgba(0, 204, 255, 0.2);
+    overflow: hidden;
+}
+.wcu-pledge-content {
+    padding: 2rem;
+}
+.wcu-pledge-lead {
+    font-size: 1.1rem;
+    color: #a3bffa;
+    margin-bottom: 2rem;
+}
+.wcu-pledge-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.wcu-pledge-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    color: #d1d5db;
+    margin-bottom: 1rem;
+}
+.wcu-pledge-list li i {
+    color: #00ff99;
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+}
+.wcu-pledge-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; /* Hidden on mobile */
+}
+@media (min-width: 992px) {
+    .wcu-pledge-card {
+        grid-template-columns: 1.5fr 1fr;
+    }
+    .wcu-pledge-image img {
+        display: block; /* Shown on desktop */
+    }
+    .wcu-pledge-content {
+        padding: 3rem;
+    }
+}
+
+/* --- WCU Comparison Section --- */
+.wcu-comparison-section {
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f3a 100%);
+}
+.wcu-comparison-table {
+    max-width: 900px;
+    margin: 3rem auto 0;
+    border: 1px solid rgba(0, 255, 153, 0.2);
+    border-radius: 16px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: rgba(20, 28, 50, 0.7);
+}
+.wcu-table-header {
+    padding: 1rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+}
+.wcu-table-our-way {
+    background: rgba(0, 255, 153, 0.1);
+    color: #e0e7ff;
+}
+.wcu-table-their-way {
+    background: rgba(255, 71, 87, 0.1);
+    color: #e0e7ff;
+}
+.wcu-table-row {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid rgba(0, 255, 153, 0.2);
+}
+.wcu-table-cell {
+    padding: 1.25rem 1rem;
+    text-align: center;
+    color: #a3bffa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+.wcu-table-cell i {
+    font-size: 1.2rem;
+}
+.text-green { color: #00ff99; }
+.text-red { color: #ff4757; }
+@media (max-width: 600px) {
+    .wcu-table-cell {
+        font-size: 0.9rem;
+        padding: 1rem 0.5rem;
+    }
+}
+
+/* ========================================================================== */
+/* 9. TESTIMONIALS PAGE-SPECIFIC STYLES                                     */
+/* ========================================================================== */
+
+/* --- Testimonials Stats Bar Section --- */
+.ts-stats-section {
+    background: linear-gradient(135deg, rgba(20, 28, 50, 0.7) 0%, rgba(26, 31, 58, 0.9) 100%);
+    padding: 2rem 0;
+}
+.ts-stats-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    text-align: center;
+}
+.ts-stat-item .ts-stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #00ff99;
+    margin: 0;
+    line-height: 1.2;
+}
+.ts-stat-item .ts-stat-number i {
+    font-size: 1.5rem;
+    color: #ffd700; /* Gold star color */
+}
+.ts-stat-item .ts-stat-label {
+    font-size: 0.9rem;
+    color: #a3bffa;
+    margin: 0;
+}
+@media (min-width: 768px) {
+    .ts-stats-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .ts-stat-item .ts-stat-number {
+        font-size: 2.5rem;
+    }
+    .ts-stat-item .ts-stat-label {
+        font-size: 1rem;
+    }
+}
+
+
+/* --- Testimonials Grid Section --- */
+.ts-grid-section {
+    background: #0a0e1a;
+}
+.ts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+.ts-card {
+    background: rgba(20, 28, 50, 0.7);
+    border-radius: 24px;
+    border: 1px solid rgba(0, 255, 153, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+.ts-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(10, 14, 26, 0.5);
+    border-bottom: 1px solid rgba(0, 255, 153, 0.1);
+}
+.ts-card-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #00ff99;
+}
+.ts-card-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #e0e7ff;
+    margin: 0;
+}
+.ts-card-location {
+    font-size: 0.9rem;
+    color: #a3bffa;
+    margin: 0;
+}
+.ts-card-location i {
+    margin-right: 0.25rem;
+}
+.ts-card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+.ts-card-stars {
+    margin-bottom: 1rem;
+    color: #ffd700;
+    font-size: 1.1rem;
+}
+.ts-card-quote {
+    font-style: italic;
+    color: #d1d5db;
+    line-height: 1.7;
+    margin: 0;
+}
+@media (min-width: 768px) {
+    .ts-grid {
+        /* This creates a 2-column grid for tablets and larger screens */
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
+@media (min-width: 1200px) {
+    .ts-grid {
+        /* On very wide screens, we can limit the width for better readability */
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ========================================================================== */
+/* 10. LONG-DISTANCE PAGE-SPECIFIC STYLES                                   */
+/* ========================================================================== */
+
+/* --- LD Difference Section --- */
+.ld-difference-section {
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f3a 100%);
+}
+/* This section reuses the .wcu-grid and .wcu-card styles from the 
+   Why Choose Us page for visual consistency, so no new CSS is needed here. */
+
+
+/* --- LD Process Section --- */
+.ld-process-section {
+    background: #0a0e1a;
+}
+.ld-process-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 3rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+/* The timeline line */
+.ld-process-timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background: linear-gradient(to bottom, #00ff99, #00ccff);
+    top: 0;
+    bottom: 0;
+    left: 44px; /* Aligns with the center of the icon */
+    z-index: 1;
+    display: none; /* Hidden on mobile, shown on desktop */
+}
+
+.ld-process-step {
+    position: relative;
+    padding-left: 80px; /* Space for the icon */
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.ld-process-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(20, 28, 50, 0.9);
+    border-radius: 50%;
+    border: 2px solid #00ff99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    z-index: 2;
+}
+.ld-process-icon i {
+    font-size: 1.5rem;
+    color: #00ff99;
+}
+
+.ld-process-content {
+    background: rgba(20, 28, 50, 0.7);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 255, 153, 0.1);
+    flex-grow: 1;
+}
+
+.ld-process-content h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #e0e7ff;
+    margin-bottom: 0.5rem;
+}
+.ld-process-content p {
+    color: #a3bffa;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .ld-process-timeline::after {
+        display: block; /* Show the timeline line on desktop */
+    }
+    .ld-process-step {
+        padding-left: 110px; /* More space for the icon */
+    }
+    .ld-process-icon {
+        width: 90px;
+        height: 90px;
+        left: 0;
+    }
+    .ld-process-icon i {
+        font-size: 2rem;
+    }
+}
+
+/* ========================================================================== */
+/* 11. PACKING SERVICES PAGE-SPECIFIC STYLES                                */
+/* ========================================================================== */
+
+/* --- PS Options Section --- */
+.ps-options-section {
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f3a 100%);
+}
+/* This section reuses the .services-grid and .service-card styles for visual consistency. */
+
+
+/* --- PS Materials Section --- */
+.ps-materials-section {
+    background: #0a0e1a;
+}
+.ps-materials-section .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 3rem;
+}
+.ps-materials-lead {
+    font-size: 1.1rem;
+    color: #a3bffa;
+    margin-bottom: 2rem;
+}
+.ps-materials-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.ps-materials-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #d1d5db;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+.ps-materials-list li i {
+    color: #00ff99;
+}
+.ps-materials-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 255, 153, 0.1);
+    border: 2px solid rgba(0, 255, 153, 0.2);
+}
+@media (min-width: 992px) {
+    .ps-materials-section .container {
+        grid-template-columns: 1.2fr 1fr;
+    }
+}
+
+
+/* --- PS Benefits Section --- */
+.ps-benefits-section {
+    background: linear-gradient(135deg, #1a1f3a 0%, #0a0e1a 100%);
+}
+/* This section reuses the .wcu-grid and .wcu-card styles for visual consistency. */
+
+
+/* --- PS Pricing Section --- */
+.ps-pricing-section {
+    background-color: #0a0e1a;
+}
+.ps-pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 3rem auto 0;
+}
+.ps-price-card {
+    background: rgba(20, 28, 50, 0.7);
+    border: 1px solid rgba(0, 255, 153, 0.1);
+    border-radius: 24px;
+    padding: 2.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.ps-price-card-featured {
+    border-color: #00ccff;
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(0, 204, 255, 0.15);
+}
+.ps-price-card h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e0e7ff;
+    margin-bottom: 1rem;
+}
+.ps-price-amount {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #00ff99;
+    margin: 0.5rem 0;
+}
+.ps-price-amount sup {
+    font-size: 1.5rem;
+    top: -1.2rem;
+}
+.ps-price-amount .ps-price-unit {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #a3bffa;
+    display: block;
+}
+.ps-price-features {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    flex-grow: 1;
+}
+.ps-price-features li {
+    color: #d1d5db;
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.ps-price-features li i {
+    color: #00ff99;
+}
+@media (min-width: 992px) {
+    .ps-pricing-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* ========================================================================== */
+/* 12. COMMERCIAL MOVING PAGE-SPECIFIC STYLES                               */
+/* ========================================================================== */
+
+/* --- CM Services Section --- */
+.cm-services-section {
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f3a 100%);
+}
+/* This section reuses the .services-grid and .service-card styles for visual consistency. */
+
+
+/* --- CM Advantage Section --- */
+.cm-advantage-section {
+    background: #0a0e1a;
+}
+.cm-advantage-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 1100px;
+    margin: 3rem auto 0;
+}
+.cm-advantage-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(20, 28, 50, 0.7);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 255, 153, 0.1);
+}
+.cm-advantage-item i {
+    font-size: 2rem;
+    color: #00ff99;
+    width: 40px;
+    text-align: center;
+}
+.cm-advantage-item h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #e0e7ff;
+    margin: 0 0 0.25rem 0;
+}
+.cm-advantage-item p {
+    color: #a3bffa;
+    line-height: 1.5;
+    margin: 0;
+}
+@media (min-width: 768px) {
+    .cm-advantage-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}
+@media (min-width: 1024px) {
+    .cm-advantage-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+/* --- CM Industries Section --- */
+.cm-industries-section {
+    background: linear-gradient(135deg, rgba(10,14,26,0.85) 0%, rgba(26,31,58,0.95) 100%), url('../assets/images/commercial-industries-bg.webp') no-repeat center center/cover;
+    background-attachment: fixed;
+}
+.cm-industries-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    max-width: 900px;
+    margin: 3rem auto 0;
+}
+.cm-industry-item {
+    background: rgba(20, 28, 50, 0.85);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 255, 153, 0.2);
+    color: #e0e7ff;
+    font-weight: 600;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+.cm-industry-item:hover {
+    background: rgba(0, 255, 153, 1);
+    color: #0a0e1a;
+    border-color: #00ff99;
+}
+
+/* ========================================================================== */
+/* 13. JUNK REMOVAL PAGE-SPECIFIC STYLES                                    */
+/* ========================================================================== */
+
+/* --- JR Items Section --- */
+.jr-items-section {
+    background: #0a0e1a;
+}
+.jr-items-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 3rem auto 0;
+}
+.jr-item-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: rgba(20, 28, 50, 0.7);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 255, 153, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.jr-item-card:hover {
+    background: rgba(0, 255, 153, 0.1);
+    color: #00ff99;
+    transform: translateY(-5px);
+}
+.jr-item-card i {
+    font-size: 2.5rem;
+    color: #00ff99;
+}
+.jr-item-card span {
+    font-weight: 600;
+    color: #e0e7ff;
+}
+@media (min-width: 768px) {
+    .jr-items-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+
+/* --- JR Process Section --- */
+.jr-process-section {
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f3a 100%);
+}
+/* This section reuses the .services-grid and .service-card styles for visual consistency. */
+/* ========================================================================== */
+/* 14. DUMPSTER RENTALS PAGE-SPECIFIC STYLES                                */
+/* ========================================================================== */
+
+/* --- DR Sizes Section --- */
+.dr-sizes-section {
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f3a 100%);
+}
+.dr-sizes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+}
+.dr-size-card {
+    background: rgba(20, 28, 50, 0.7);
+    border-radius: 24px;
+    border: 1px solid rgba(0, 255, 153, 0.1);
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+.dr-size-card:hover {
+    transform: translateY(-8px);
+    border-color: #00ff99;
+}
+.dr-size-card-featured {
+    border-color: #00ccff;
+    box-shadow: 0 10px 40px rgba(0, 204, 255, 0.15);
+}
+.dr-size-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.dr-size-info {
+    padding: 2rem;
+}
+.dr-size-info h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e0e7ff;
+    margin-bottom: 1rem;
+}
+.dr-size-info p {
+    color: #a3bffa;
+    line-height: 1.6;
+}
+
+/* Notice inside the CTA form */
+.dr-notice {
+    background: rgba(0, 204, 255, 0.1);
+    border: 1px solid rgba(0, 204, 255, 0.2);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.dr-notice i {
+    color: #00ccff;
+    font-size: 1.5rem;
+}
+.dr-notice p {
+    color: #a3bffa;
+    margin: 0;
+    line-height: 1.5;
+}
+
+@media (min-width: 992px) {
+    .dr-sizes-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* ========================================================================== */
+/* 15. MOVING TIPS PAGE-SPECIFIC STYLES                                     */
+/* ========================================================================== */
+
+.mt-content-section {
+    background: #0a0e1a;
+}
+
+.mt-articles-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 3rem auto 0;
+}
+
+.mt-article-card {
+    background: rgba(20, 28, 50, 0.7);
+    border-radius: 24px;
+    border: 1px solid rgba(0, 255, 153, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.mt-article-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.mt-article-content {
+    padding: 2rem;
+}
+
+.mt-article-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #e0e7ff;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.mt-article-excerpt {
+    color: #a3bffa;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.mt-article-excerpt strong {
+    color: #00ff99;
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    .mt-article-content {
+        padding: 2.5rem;
+    }
+}
+
+/* ========================================================================== */
+/* 16. FAQS PAGE-SPECIFIC STYLES                                            */
+/* ========================================================================== */
+
+.fq-content-section {
+    background: #0a0e1a;
+}
+
+.fq-phase {
+    max-width: 900px;
+    margin: 0 auto 4rem auto;
+}
+
+.fq-phase-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid rgba(0, 255, 153, 0.2);
+    padding-bottom: 1rem;
+}
+
+.fq-phase-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #00ff99, #00ccff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.fq-phase-icon i {
+    font-size: 1.75rem;
+    color: #0a0e1a;
+}
+
+.fq-phase-title h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #e0e7ff;
+    margin: 0;
+}
+
+.fq-phase-title p {
+    font-size: 1rem;
+    color: #a3bffa;
+    margin: 0;
+}
+
+.fq-accordion .fq-item {
+    background: rgba(20, 28, 50, 0.7);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0, 255, 153, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.fq-accordion .fq-item[open] {
+    background: rgba(0, 255, 153, 0.1);
+}
+
+.fq-question {
+    display: block;
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    background: transparent;
+    border: none;
+    color: #e0e7ff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: left;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+}
+
+.fq-question::-webkit-details-marker {
+    display: none;
+}
+
+.fq-question::after {
+    content: '\f078'; /* FontAwesome chevron-down */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.fq-item[open] .fq-question::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.fq-answer {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: #a3bffa;
+    line-height: 1.8;
+}
+
+/* --- FAQ CTA Section --- */
+.fq-cta-section {
+    background: linear-gradient(135deg, #1a1f3a 0%, #0a0e1a 100%);
+}
+.fq-cta-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(20, 28, 50, 0.7);
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 255, 153, 0.2);
+    text-align: center;
+}
+.fq-cta-card h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #e0e7ff;
+    margin-bottom: 1rem;
+}
+.fq-cta-card p {
+    font-size: 1.1rem;
+    color: #a3bffa;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+/* ========================================================================== */
+/* 17. LICENSE & INSURANCE PAGE-SPECIFIC STYLES                             */
+/* ========================================================================== */
+
+/* --- LI Credentials Section --- */
+.li-credentials-section {
+    background: #0a0e1a;
+}
+.li-credentials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+}
+.li-credential-card {
+    background: rgba(20, 28, 50, 0.7);
+    border-radius: 24px;
+    padding: 2.5rem;
+    text-align: center;
+    border: 1px solid rgba(0, 255, 153, 0.1);
+    transition: all 0.3s ease;
+}
+.li-credential-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 255, 153, 0.15);
+    border-color: #00ff99;
+}
+.li-credential-card i {
+    font-size: 2.5rem;
+    color: #00ff99;
+    margin-bottom: 1.5rem;
+}
+.li-credential-card h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e0e7ff;
+    margin-bottom: 0.5rem;
+}
+.li-credential-number {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #d1d5db;
+    margin: 0;
+}
+.li-credential-status {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #00ff99;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0.25rem 0 1rem 0;
+}
+.li-credential-card p {
+    color: #a3bffa;
+    line-height: 1.6;
+}
+@media (min-width: 992px) {
+    .li-credentials-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+/* --- LI Insurance Section --- */
+.li-insurance-section {
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f3a 100%);
+}
+/* This section reuses the .fq-accordion styles from the FAQs page for visual consistency. */
+/* ========================================================================== */
+/* 18. BLOG PAGE-SPECIFIC STYLES                                            */
+/* ========================================================================== */
+
+.bl-content-section {
+    background: #0a0e1a;
+}
+
+/* --- Featured Article --- */
+.bl-featured-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    background: rgba(20, 28, 50, 0.7);
+    border-radius: 24px;
+    border: 1px solid rgba(0, 255, 153, 0.2);
+    overflow: hidden;
+    margin: 3rem auto 0;
+    max-width: 1100px;
+}
+.bl-featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 250px;
+}
+.bl-featured-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.bl-category-badge {
+    background: linear-gradient(135deg, #00ff99, #00ccff);
+    color: #0a0e1a;
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+}
+.bl-featured-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #e0e7ff;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+.bl-featured-excerpt {
+    color: #a3bffa;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+@media (min-width: 992px) {
+    .bl-featured-card {
+        grid-template-columns: 1fr 1fr;
+    }
+    .bl-featured-content {
+        padding: 3rem;
+    }
+}
+
+
+/* --- Blog Grid --- */
+.bl-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.bl-card {
+    background: rgba(20, 28, 50, 0.7);
+    border-radius: 24px;
+    border: 1px solid rgba(0, 255, 153, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+.bl-card:hover {
+    transform: translateY(-8px);
+    border-color: #00ff99;
+}
+.bl-card-image-link img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.bl-card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.bl-card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+.bl-card-title a {
+    color: #e0e7ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.bl-card-title a:hover {
+    color: #00ff99;
+}
+.bl-card-excerpt {
+    color: #a3bffa;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+@media (min-width: 768px) {
+    .bl-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 1024px) {
+    .bl-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* ========================================================================== */
+/* 4. FOOTER (REVISED & ENHANCED)                                           */
+/* ========================================================================== */
+.site-footer {
+    background-color: #0a0e1a;
+    border-top: 1px solid rgba(0, 255, 153, 0.15);
+    padding: 4rem 0 2rem 0;
+    font-size: 0.95rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-widget .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #00ff99;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+}
+
+.footer-widget .footer-brand:hover {
+    color: #00ccff;
+}
+
+.footer-widget .footer-brand i {
+    font-size: 1.75rem;
+}
+
+.footer-about {
+    color: #a3bffa;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.footer-contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #a3bffa;
+    margin-bottom: 0.75rem;
+}
+.footer-contact-info p i {
+    color: #00ff99;
+    width: 20px;
+    text-align: center;
+}
+.footer-contact-info a {
+    color: #a3bffa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-contact-info a:hover {
+    color: #00ff99;
+}
+
+.footer-widget-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #e0e7ff;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.75rem; /* Increased padding */
+    display: inline-block; /* Changed for proper underline width */
+}
+
+/* CORRECTED RULE: This now underlines the full width of the text. */
+.footer-widget-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Changed from 30px to 100% */
+    height: 2px;
+    background: #00ff99;
+}
+
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-list li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links-list a {
+    color: #a3bffa;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links-list a:hover {
+    color: #00ff99;
+    padding-left: 5px;
+}
+
+.footer-bottom-bar {
+    border-top: 1px solid rgba(0, 255, 153, 0.1);
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.footer-copyright {
+    color: #a3bffa;
+    font-size: 0.9rem;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-socials a {
+    color: #a3bffa;
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(163, 191, 250, 0.3);
+    border-radius: 50%;
+}
+
+.footer-socials a:hover {
+    color: #0a0e1a;
+    background: #00ff99;
+    border-color: #00ff99;
+    transform: translateY(-3px);
+}
+
+.footer-legal-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-legal-links a {
+    color: #a3bffa;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+.footer-legal-links a:hover {
+    text-decoration: underline;
+    color: #00ff99;
+}
+
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+    .footer-bottom-bar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* ========================================================================== */
+/* 19. LEGAL PAGES (PRIVACY & TERMS) SPECIFIC STYLES                        */
+/* ========================================================================== */
+
+.lg-content-section {
+    background-color: #0a0e1a;
+}
+
+.lg-content-card {
+    background: rgba(20, 28, 50, 0.7);
+    border-radius: 24px;
+    border: 1px solid rgba(0, 255, 153, 0.1);
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.lg-effective-date {
+    font-size: 0.9rem;
+    color: #a3bffa;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.lg-content-card h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #00ff99;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 255, 153, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.lg-content-card h2:first-of-type {
+    margin-top: 0;
+}
+
+.lg-content-card p {
+    color: #d1d5db;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.lg-content-card ul {
+    list-style-type: disc;
+    color: #d1d5db;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.lg-content-card li {
+    margin-bottom: 0.75rem;
+    line-height: 1.8;
+}
+
+.lg-content-card a {
+    color: #00ff99;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.lg-content-card a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .lg-content-card {
+        padding: 3rem;
+    }
+}
+
+/* Styling for the new footer credit link */
+.footer-credit-link {
+    color: #a3bffa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-credit-link:hover {
+    color: #00ff99;
+    text-decoration: underline;
+}
+
+/* ============================================ */
+/* NEW STYLES FOR UPGRADED LEAD ENGINE        */
+/* ============================================ */
+
+/* Secondary Button Style (for "Call Now") */
+.btn-secondary {
+    background-color: transparent;
+    color: #00ff99;
+    border: 2px solid #00ff99;
+    padding-top: calc(1rem - 2px); /* Adjust padding to account for border */
+    padding-bottom: calc(1rem - 2px);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0, 255, 153, 0.1);
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Wrapper for the form buttons */
+.form-actions {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack buttons on mobile */
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Make buttons side-by-side on larger screens */
+@media (min-width: 768px) {
+    .form-actions {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .calc-inputs {
+        grid-template-columns: 1fr 1fr;
+    }
+    /* Make the name field take up the full width on desktop */
+    .calc-inputs .input-group:first-child {
+        grid-column: 1 / -1;
+    }
+}
