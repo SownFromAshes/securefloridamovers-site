@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Areas | Secure Florida Movers | Tampa Bay Movers</title>
+    <meta name="description" content="Secure Florida Movers proudly serves Tampa, St. Petersburg, Clearwater, and the surrounding Tampa Bay area. Find out if your move is within our local service area.">
+    <meta name="keywords" content="tampa moving service area, st petersburg movers, clearwater moving company, movers near me, local service area">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Our Tampa Bay Service Areas | Secure Florida Movers">
+    <meta property="og:description" content="We provide 5-star moving services throughout the Tampa Bay metropolitan area, including Tampa, St. Pete, and Clearwater. See our full service list.">
+    <meta property="og:image" content="../assets/images/service-area-hero.webp">
+    <meta property="og:url" content="https://www.securefloridamovers.com/pages/service-areas.html">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <!-- 1. SEO-FRIENDLY BACKGROUND IMAGE -->
+            <div class="hero-background-video">
+                <video poster="../assets/images/local-moving-hero.webp" autoplay loop muted playsinline>
+                    <source src="../assets/videos/hero-about-video.mp4" type="video/mp4">
+                    <!-- For best practice, you could also add a .webm version here -->
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- 2. YOUR EXISTING OVERLAY -->
+            <div class="hero-overlay"></div>
+
+            <!-- 3. YOUR EXISTING CONTENT -->
+            <div class="container hero-content">
+                <h1 class="hero-title">Proudly Serving the <span class="highlight">Tampa Bay</span> Area</h1>
+                <h2 class="hero-subtitle">Your trusted, local moving partner for Tampa, St. Petersburg, Clearwater, and beyond.</h2>
+                <p class="hero-description">We are strategically based in the heart of Tampa Bay to provide efficient, reliable, and professional moving services to our neighbors across the region.</p>
+                <div class="hero-buttons" style="margin-top: 1.5rem;">
+                    <a href="#calculator-section" class="btn btn-primary">Get Your Free Quote</a>
+                </div>
+            </div>    
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- SERVICE AREAS CONTENT SECTION -->
+        <section class="main-section">
+            <div class="container" style="max-width: 900px;">
+                <h2 class="section-title">Our Primary <span class="highlight">Service Areas</span></h2>
+                <p class="section-subtitle">While we are based in Tampa, our service extends throughout the metropolitan area. If you're unsure whether you fall within our range, please don't hesitate to contact us!</p>
+                
+                <div class="au-values-grid" style="margin-top: 3rem;">
+                    <!-- Reusing the 'au-values' styles for a consistent look -->
+                    <div class="au-value-card">
+                        <div class="au-value-icon"><i class="fas fa-city"></i></div>
+                        <h3>Tampa</h3>
+                        <p>Our home base. We serve all Tampa neighborhoods, from New Tampa and South Tampa to Westchase and the downtown urban core.</p>
+                    </div>
+                    <div class="au-value-card">
+                        <div class="au-value-icon"><i class="fas fa-sun"></i></div>
+                        <h3>St. Petersburg</h3>
+                        <p>We handle moves all across St. Pete, including the vibrant downtown, Snell Isle, and the beautiful surrounding beach communities.</p>
+                    </div>
+                    <div class="au-value-card">
+                        <div class="au-value-icon"><i class="fas fa-water"></i></div>
+                        <h3>Clearwater</h3>
+                        <p>From the mainland to the islands, we provide comprehensive moving services for residents and businesses in Clearwater and Clearwater Beach.</p>
+                    </div>
+                </div>
+
+                <div class="fq-cta-card" style="margin-top: 4rem; text-align: center;">
+                    <h3>Serving the Greater Tampa Bay Region</h3>
+                    <p>Our service area also frequently includes moves to and from surrounding communities like <strong>Brandon, Sarasota, Lakeland, Palm Harbor,</strong> and more. For moves to these areas, a standard travel fee may apply to cover our crew's time and fuel. We will always discuss this with you upfront for a fully transparent quote.</p>
+                    <a href="/pages/contact-us.html" class="btn btn-primary">Get a Quote for Your City</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- REPLACED: The old form is gone, replaced by the standardized Instant Quote Engine -->
+        <section id="calculator-section" class="calculator-section main-section">
+            <div class="container">
+                <h2 class="section-title">Get Your <span class="highlight">Guaranteed Quote</span> Now</h2>
+                <p class="section-subtitle">Fill out the form for a transparent price, or call us for immediate assistance.</p>
+                <div class="calculator-card" id="quote-form-container">
+                    <h3><i class="fas fa-rocket"></i> Start Your Quote in 60 Seconds</h3>
+                    <form id="native-lead-form" action="https://formspree.io/f/manjodoo" method="POST">
+                        <div class="calc-inputs">
+                            <div class="input-group">
+                                <label for="first_name">First Name:</label>
+                                <input type="text" id="first_name" name="first_name" placeholder="Jane" required autocomplete="given-name">
+                            </div>
+                            <div class="input-group">
+                                <label for="last_name">Last Name:</label>
+                                <input type="text" id="last_name" name="last_name" placeholder="Doe" required autocomplete="family-name">
+                            </div>
+                            <div class="input-group">
+                                <label for="move-from-zip">Moving From ZIP Code:</label>
+                                <input type="text" id="move-from-zip" name="move_from_zip" placeholder="From ZIP" required autocomplete="postal-code">
+                            </div>
+                            <div class="input-group">
+                                <label for="move-to-zip">Moving To ZIP Code:</label>
+                                <input type="text" id="move-to-zip" name="move_to_zip" placeholder="To ZIP" required autocomplete="postal-code">
+                            </div>
+                            <div class="input-group">
+                                <label for="move-size">Home Size:</label>
+                                <select id="move-size" name="home_size" required>
+                                    <option value="">Select home size...</option>
+                                    <option value="Studio/1 Bedroom">Studio/1 Bedroom</option>
+                                    <option value="2 Bedrooms">2 Bedrooms</option>
+                                    <option value="3 Bedrooms">3 Bedrooms</option>
+                                    <option value="4+ Bedrooms">4+ Bedrooms</option>
+                                    <option value="Office/Commercial">Office/Commercial</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="email">Your Email Address:</label>
+                                <input type="email" id="email" name="email" placeholder="Your quote will be sent here" required autocomplete="email">
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary"><span class="btn-text">Email My Quote Now</span></button>
+                            <a href="tel:727-459-3467" class="btn btn-secondary"><i class="fas fa-phone-alt" style="margin-right: 0.75rem;"></i><span class="btn-text">Call Us Now</span></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <div id="cookie-banner-placeholder"></div>
+    <script src="../assets/js/script.js" defer></script>
+</body>
+</html>
